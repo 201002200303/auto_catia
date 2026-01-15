@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Manager - OxyGent</title>
+    <link rel="shortcut icon" href="./image/group-favicon.png" type="image/x-icon">
+
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="./css/style.css?time=2">
+    <link rel="stylesheet" href="./css/main.css?time=2">
+    <!-- Prompt Manager Refactored Styles -->
+    <link rel="stylesheet" href="./css/prompt-manager.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="./js/prompt-manager.js" defer></script>
+</head>
+<body>
+    <!-- Header matching index.html style -->
+    <div class="header">
+        <div class="header-left">
+            <img class="header-left-img" src="./image/group-favicon.png" alt="OxyGent">
+        </div>
+        <div class="header-title">Prompt Manager</div>
+        <div class="header-right">
+            <button onclick="window.location.href='/'" title="Back to Home">
+                <img src="./image/arrow-left.svg" alt="Back">
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-panel">
+            <!-- Toolbar -->
+            <div class="actions-bar">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search prompts..." onkeyup="handleSearch(event)">
+                </div>
+            </div>
+
+            <!-- Prompts Grid -->
+            <div id="promptsList" class="prompts-grid">
+                <!-- Dynamic Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Prompt Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Prompt</h2>
+                <button class="close" onclick="hideEditModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-form">
+                    <div class="form-group">
+                        <label for="edit_prompt_key">Prompt Key</label>
+                        <input type="text" id="edit_prompt_key" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_prompt_content">Prompt Content</label>
+                        <textarea id="edit_prompt_content" class="form-control" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="hideEditModal()">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="savePrompt()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Version Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Version Preview</h2>
+                <button class="close" onclick="hidePreviewModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-info" style="margin-bottom: 15px; padding: 10px; background: #F9FAFB; border-radius: 4px;">
+                    <div class="preview-meta" style="margin-bottom: 5px;">
+                        <span class="preview-version" id="preview-version-info" style="font-weight: bold; margin-right: 10px;"></span>
+                        <span class="preview-date" id="preview-date-info" style="color: #666;"></span>
+                    </div>
+                    <div class="preview-stats" id="preview-stats" style="font-size: 12px; color: #888;"></div>
+                </div>
+                <div class="preview-content-container">
+                    <div class="preview-content-header" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span style="font-weight: 500;">Content</span>
+                        <div class="preview-actions" style="display: flex; gap: 5px;">
+                            <button class="btn btn-sm btn-secondary" onclick="copyPreviewContent()">Copy</button>
+                            <button class="btn btn-sm btn-info" onclick="togglePreviewMode()">View Mode</button>
+                        </div>
+                    </div>
+                    <div class="preview-content" id="preview-content">
+                        <!-- Content loaded here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="hidePreviewModal()">Close</button>
+                <button type="button" class="btn btn-warning" id="preview-rollback-btn">
+                    Rollback to this version
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Version History Modal -->
+    <div id="history-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Version History</h2>
+                <button class="close" onclick="hideHistoryModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="version-list" class="version-history">
+                    <!-- History loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="hideHistoryModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+path: dataset_with_noise
+train: images/train
+val: images/val
+test: images/test
+
+nc: 36
+names:
+  - '000' # 凸台
+  - '001' # 凹槽
+  - '002' # 旋转体
+  - '003' # 旋转槽
+  - '004' # 孔
+  - '005' # 开槽
+  - '006' # 选择
+  - '007' # 草图
+  - '008' # 倒圆角
+  - '009' # 倒角
+  - '010' # 盒体
+  - '011' # 厚度
+  - '012' # 点
+  - '013' # 直线
+  - '014' # 平面
+  - '015' # Automatic bends
+  - '016' # Corner
+  - '017' # Corner Relief
+  - '018' # cutout
+  - '019' # Extrusion
+  - '020' # Flange
+  - '021' # fold_Unfold
+  - '022' # point stamp
+  - '023' # Reactangular Pattern
+  - '024' # Save As DXF
+  - '025' # Sheet Metal Design
+  - '026' # sheet metal parameters
+  - '027' # wall
+  - '028' # wall on Edge
+  - '029' # 实体混合
+  - '030' # 平移
+  - '031' # 开始
+  - '032' # 机械设计
+  - '033' # 约束
+  - '034' # 镜像
+  - '035' # 零件
+
