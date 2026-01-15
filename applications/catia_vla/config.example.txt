@@ -1,0 +1,39 @@
+# ================================
+# CATIA VLA 智能体配置
+# ================================
+# 复制此文件为 .env 并填写您的 LLM 配置
+# 
+# 使用方法:
+#   1. 复制此文件:  copy config.example.txt .env
+#   2. 编辑 .env 文件，填写您的 API Key
+#   3. 运行:  python run_chat.py
+
+# ===== 大模型配置 (必填) =====
+
+# OpenAI 兼容 API
+DEFAULT_LLM_API_KEY="sk-your-api-key-here"
+DEFAULT_LLM_BASE_URL="https://api.openai.com/v1"
+DEFAULT_LLM_MODEL_NAME="gpt-4o"
+
+# ===== 国内替代方案 =====
+
+# 智谱 AI (ChatGLM)
+# DEFAULT_LLM_API_KEY="your-zhipu-api-key"
+# DEFAULT_LLM_BASE_URL="https://open.bigmodel.cn/api/paas/v4"
+# DEFAULT_LLM_MODEL_NAME="glm-4-plus"
+
+# 阿里云通义千问
+# DEFAULT_LLM_API_KEY="your-dashscope-api-key"
+# DEFAULT_LLM_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+# DEFAULT_LLM_MODEL_NAME="qwen-max"
+
+# DeepSeek
+# DEFAULT_LLM_API_KEY="your-deepseek-api-key"
+# DEFAULT_LLM_BASE_URL="https://api.deepseek.com/v1"
+# DEFAULT_LLM_MODEL_NAME="deepseek-chat"
+
+# Ollama 本地模型 (无需 API Key)
+# DEFAULT_LLM_API_KEY="ollama"
+# DEFAULT_LLM_BASE_URL="http://localhost:11434/v1"
+# DEFAULT_LLM_MODEL_NAME="qwen2.5:14b"
+

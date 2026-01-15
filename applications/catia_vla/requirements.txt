@@ -1,0 +1,8 @@
+ultralytics
+openai
+pyautogui
+pygetwindow
+chromadb
+pywin32
+opencv-python
+numpy
